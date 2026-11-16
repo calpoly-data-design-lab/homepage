@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+# Build the site into _site/ (what Cloudflare Pages runs), then check the result.
+# Needs only Ruby and Bundler: no Node.
+set -e
+cd "$(dirname "$0")/.."
+bundle install
+JEKYLL_ENV=production bundle exec jekyll build
+ruby script/check-site.rb _site

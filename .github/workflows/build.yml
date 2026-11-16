@@ -1,0 +1,22 @@
+# Build check for pull requests and pushes. It only proves the site builds and its
+# links resolve; Cloudflare Pages builds and deploys from the repository itself
+# (see "Build and deploy" in the README). Ruby only: no Node.
+name: Build
+
+on:
+  push: {branches: [main]}
+  pull_request: {}
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true # reads .ruby-version and Gemfile.lock
+      - run: JEKYLL_ENV=production bundle exec jekyll build
+      - run: ruby script/check-site.rb _site

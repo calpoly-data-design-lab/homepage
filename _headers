@@ -1,0 +1,14 @@
+# Cloudflare Pages response headers (https://developers.cloudflare.com/pages/configuration/headers/).
+# Jekyll copies this file to the output root (see `include:` in _config.yml).
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Fonts and photographs change rarely and are not fingerprinted: cache for 30 days.
+/assets/fonts/*
+  Cache-Control: public, max-age=2592000
+/assets/img/*
+  Cache-Control: public, max-age=2592000

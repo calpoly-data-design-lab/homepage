@@ -1,0 +1,10 @@
+Fonts self-hosted for this site. All three are licensed under the SIL Open Font
+License 1.1, which permits use, embedding, and redistribution (the full license
+text is in Inter-OFL.txt; the terms are the same for each family).
+
+Inter            Copyright (c) 2016 The Inter Project Authors (https://github.com/rsms/inter)
+                 InterVariable.woff2 is from the official 4.1 release.
+EB Garamond      Copyright 2017 The EB Garamond Project Authors (https://github.com/georgd/EB-Garamond)
+                 EBGaramond-Regular.woff and -Italic.woff are WOFF wrappers of the OFL TrueType files.
+Fira Code        Copyright 2014 The Fira Code Project Authors (https://github.com/tonsky/FiraCode)
+                 FiraCode-VF.woff is a WOFF wrapper of the OFL variable TrueType file.

@@ -1,0 +1,8 @@
+{%- comment -%}
+A page section: its head sits in the left gutter and sticks while the section scrolls.
+Params: id, title, body (markdown, or html with raw=true), eyebrow (optional).
+{%- endcomment -%}
+<section class="section wrap" id="{{ include.id }}" aria-labelledby="{{ include.id }}-title">
+<header class="section-head">{% if include.eyebrow %}<p class="label aside meta">{{ include.eyebrow }}</p>{% else %}<p class="label aside meta" data-dup aria-hidden="true">{{ include.title }}</p>{% endif %}<h2 id="{{ include.id }}-title">{{ include.title }}</h2></header>
+<div class="section-body">{% if include.raw %}{{ include.body | strip }}{% else %}<div class="prose">{{ include.body | markdownify }}</div>{% endif %}</div>
+</section>
