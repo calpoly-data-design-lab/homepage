@@ -1,5 +1,1 @@
-<div class="card-grid people-grid">
-  {% for person in include.people %}
-    {% include person-card.html person=person %}
-  {% endfor %}
-</div>
+<div class="listing people">{% for person in include.people %}{% include person-card.html person=person %}{% endfor %}</div>

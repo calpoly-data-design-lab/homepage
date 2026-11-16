@@ -1,4 +1,4 @@
-title: Cal Poly Data Design Lab
+title: Data Design Lab
 description: >-
   Homepage for the Cal Poly San Luis Obispo Data Design Lab.
 url: ""
@@ -14,9 +14,18 @@ collections:
   pages:
     output: true
 
+# Cloudflare Pages reads _headers from the output root; Jekyll skips
+# underscore-prefixed files unless they are listed here.
+include:
+  - _headers
+
 exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - script
+  - tmp
+  - vendor
+  - node_modules
 
 plugins: []

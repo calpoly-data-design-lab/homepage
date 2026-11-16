@@ -1,50 +1,28 @@
 ---
 layout: default
 title: Home
-description: Homepage for the Cal Poly Data Design Lab.
+description: Homepage for the Data Design Lab.
 ---
-
-<section class="hero">
-  <div class="hero-introduction">
-  <div class="hero-brand">
-    <img class="hero-logo" src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="96" height="96">
-    <div>
-      <p class="eyebrow">{{ site.data.site_settings.institution }}</p>
-      <h1>{{ site.data.site_settings.lab_name }}</h1>
-    </div>
-  </div>
-  <p class="subtitle">{{ site.data.site_settings.tagline }}</p>
-  <p>
-    We study how people make sense of data and build tools that help communities,
-    researchers, and practitioners analyze, visualize, and communicate with data.
-    Our work sits at the intersection of <em>data science</em>,
-    <em>data visualization</em>, and <em>human-computer interaction</em>.
-  </p>
-  
-  <p class="button-row">
-    <a class="button" href="{{ '/projects/' | relative_url }}">Explore projects</a>
-    <a class="button secondary" href="{{ '/join/' | relative_url }}">Join the lab</a>
-  </p>
-  </div>
-  <aside class="card meeting-card" aria-labelledby="meeting-heading">
-    <p class="eyebrow">Weekly meeting</p>
-    <h2 id="meeting-heading">Regular lab meetings</h2>
-    <h3>Fridays, 12–1 PM</h3>
-    <p>Join the Cal Poly Data Design Lab for regular project updates, research discussion, and informal collaboration.</p>
-    <p class="metadata"><strong>Location:</strong> Building 14, Room 238B</p>
-    <p class="button-row"><a class="button" href="https://calpoly.zoom.us/j/84484101305">Join on Zoom</a></p>
-  </aside>
+<section class="hero" aria-labelledby="hero-title">
+<div class="motif-field"><canvas class="motif" data-motif-role="hero" aria-hidden="true"></canvas></div>
+<div class="hero-body wrap">
+<p class="label aside meta">{{ site.data.site_settings.institution }}</p>
+{%- assign name_words = site.data.site_settings.lab_name | split: ' ' %}
+<div><h1 id="hero-title" class="display">{{ name_words[0] }}<br />{{ site.data.site_settings.lab_name | remove_first: name_words[0] | strip }}</h1></div>
+<p class="button-row lead-col hero-actions"><a class="button primary" href="{{ '/projects/' | relative_url }}">Explore projects</a> <a class="button secondary" href="{{ '/join/' | relative_url }}">Join the lab</a></p>
+</div>
 </section>
-
-<section>
-  <h2>Ongoing projects</h2>
-  {% include project-list.html projects=site.data.projects.ongoing %}
-</section>
-
-<section>
-  <h2>Affiliated people</h2>
-  <h3>Faculty</h3>
-  {% include people-list.html people=site.data.people.faculty %}
-  <h3>Students</h3>
-  {% include people-list.html people=site.data.people.students %}
-</section>
+<main id="main">
+{% capture meeting -%}
+<div class="meeting"><h3 class="meeting-when">Fridays, 12–1 PM</h3><p class="meta"><strong>Location:</strong> Building 14, Room 238B</p><p class="button-row"><a class="button primary" href="https://calpoly.zoom.us/j/84484101305">Join on Zoom</a></p></div>
+{%- endcapture %}
+{% include section.html id="meeting" title="Regular lab meetings" eyebrow="Weekly meeting" body=meeting raw=true %}
+{% capture ongoing -%}
+{% include project-list.html projects=site.data.projects.ongoing hide_summary=true %}
+{%- endcapture %}
+{% include section.html id="ongoing-projects" title="Ongoing projects" body=ongoing raw=true %}
+{% capture people -%}
+<div class="group"><h3 class="label">Faculty</h3>{% include people-list.html people=site.data.people.faculty %}</div><div class="group"><h3 class="label">Students</h3>{% include people-list.html people=site.data.people.students %}</div>
+{%- endcapture %}
+{% include section.html id="affiliated-people" title="Affiliated people" body=people raw=true %}
+</main>

@@ -1,5 +1,1 @@
-<div class="card-grid project-grid">
-  {% for project in include.projects %}
-    {% include project-card.html project=project %}
-  {% endfor %}
-</div>
+<div class="listing projects">{% for project in include.projects %}{% include project-card.html project=project hide_summary=include.hide_summary %}{% endfor %}</div>

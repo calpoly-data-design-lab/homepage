@@ -6,17 +6,9 @@ faculty:
     email: awrigh20@calpoly.edu
     website: https://austinpwright.com
     image: /assets/img/people/austin.jpg
-    interests:
-      - Human-centered Data Science
-      - Data Visualization
-      - Human-Computer Interaction
-      - Scientific Computing
-    bio: >-
-      My research in Scientific Human-Centered Machine Learning aims to solve problems intersecting machine learning, human-computer interaction, and scientific computing, by using a strong basis in both mathematical and human centered principles in deep collaboration with scientists to develop tools with usability, interpretability, and scientific impact.
 
 students:
   - name: Tobin Bohley
-    role: Undergraduate Researcher
     program: B.S. Computer Science
     year: 2028
     email: tbohley@calpoly.edu
@@ -24,14 +16,12 @@ students:
     image: /assets/img/people/tobin.jpg
 
   - name: Greg Phillips
-    role: Undergraduate Researcher
     program: B.S. Computer Science
     year: 2026
     email: gaphilli@calpoly.edu
 
 
   - name: Khoa Ly
-    role: Graduate Researcher
     program: M.S. Computer Science
     year: 2027
     email: kly27@calpoly.edu
@@ -39,7 +29,6 @@ students:
     image: /assets/img/people/khao-portrait.webp
 
   - name: Pranav Nallaperumal
-    role: Graduate Researcher
     program: M.S. Computer Science
     year: 2027
     email:  pnallape@calpoly.edu
@@ -47,7 +36,6 @@ students:
     image: /assets/img/people/pranav-portrait.jpg
 
   - name: Aidan Freeland
-    role: Graduate Researcher
     program: M.S. Computer Science
     year: 2027
     email: apfreela@calpoly.edu
@@ -60,7 +48,6 @@ students:
 
 alumni:
   - name: Sam Gar Fox Kaplan
-    role: Graduate Researcher
     program: M.S. Computer Science
     year: 2026
     email: sf.kaplan@gmail.com

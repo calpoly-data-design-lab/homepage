@@ -1,5 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 688 688" fill-rule="evenodd">
-  <title>Cal Poly Data Design Lab</title>
-  <path d="M 362.291 24.000 C 442.307 24.000 519.052 55.796 575.633 112.369 C 632.214 168.963 664.000 245.707 664.000 325.728 L 664.000 664.013 L 265.303 664.013 C 201.305 664.013 139.929 638.594 94.676 593.336 C 49.423 548.078 24.000 486.700 24.000 422.710 C 24.000 241.345 24.000 24.000 24.000 24.000 L 362.291 24.000 Z" fill="#154734" stroke="#ffffff" stroke-width="24" stroke-linejoin="round"/>
-  <path d="M 305.964 92.745 C 359.735 92.745 411.336 114.111 449.354 152.129 C 487.410 190.184 508.776 241.748 508.776 295.557 L 508.776 382.482 C 508.776 436.254 487.410 487.855 449.354 525.910 C 411.336 563.928 359.735 585.295 305.964 585.295 L 267.946 585.295 C 176.905 585.295 103.114 511.504 103.114 420.463 L 103.114 92.745 L 305.964 92.745 Z M 306.188 151.867 L 163.508 151.867 L 163.508 422.708 C 163.508 450.136 174.397 476.442 193.781 495.863 C 213.201 515.246 239.507 526.135 266.935 526.135 L 306.188 526.135 C 344.056 526.135 380.353 511.130 407.108 484.337 C 433.863 457.583 448.905 421.286 448.905 383.455 L 448.905 294.584 C 448.905 215.779 384.993 151.867 306.188 151.867 Z" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 178 178">
+  <!-- The mark always sits on a ground that contrasts with it: dark mark on white,
+       light mark on black. Follows the browser's color scheme; site.js replaces
+       this with the active mode's ground. -->
+  <style>
+    .bg { fill: #fff } .c { fill: #bfbfbf } .b { fill: #404040 } .d { fill: #000 }
+    @media (prefers-color-scheme: dark) { .bg { fill: #000 } .c { fill: #404040 } .b { fill: #d9d9d9 } .d { fill: #fff } }
+  </style>
+  <rect class="bg" x="-14" y="-14" width="178" height="178"/>
+  <circle class="c" cx="75" cy="75" r="75"/>
+  <rect class="b" x="25" y="0" width="50" height="150"/>
+  <path class="d" d="M75 0 A75 75 0 0 1 75 150 Z"/>
 </svg>

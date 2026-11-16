@@ -1,21 +1,16 @@
-{% assign person = include.person %}
-{% assign person_image = person.image | default: '/assets/img/people/placeholder.svg' %}
-<article class="card person-card">
-  <img class="person-image" src="{{ person_image | relative_url }}" alt="Portrait for {{ person.name }}">
-  <div>
-    <h3>{{ person.name }}</h3>
-    <p class="metadata">
-      {% if person.title %}{{ person.title }}{% elsif person.role %}{{ person.role }}{% endif %}
-      {% if person.program %}<br>{{ person.program }}{% endif %}
-      {% if person.year %}, class of {{ person.year }}{% endif %}
-      {% if person.years %}<br>{{ person.years }}{% endif %}
-      {% if person.affiliation %}<br>{{ person.affiliation }}{% endif %}
-      {% if person.current %}<br>{{ person.current }}{% endif %}
-    </p>
-    {% if person.bio %}<p>{{ person.bio }}</p>{% endif %}
-    <p class="links">
-      {% if person.email %}<a href="mailto:{{ person.email }}">Email</a>{% endif %}
-      {% if person.website %}<a href="{{ person.website }}">Website</a>{% endif %}
-    </p>
-  </div>
+{%- assign person = include.person -%}
+<article class="person">
+{%- if person.image -%}
+<img class="portrait" src="{{ person.image | relative_url }}" alt="Portrait for {{ person.name }}" width="400" height="500">
+{%- else -%}
+<canvas class="ds-image portrait placeholder" data-scene="mark" aria-hidden="true"></canvas>
+{%- endif -%}
+<h3>{{ person.name }}</h3>
+<p class="meta">{% if person.title %}{{ person.title }}{% elsif person.role %}{{ person.role }}{% endif %}{% if person.program %}<br>{{ person.program }}{% endif %}{% if person.year %}, class of {{ person.year }}{% endif %}{% if person.years %}<br>{{ person.years }}{% endif %}{% if person.affiliation %}<br>{{ person.affiliation }}{% endif %}{% if person.current %}<br>{{ person.current }}{% endif %}</p>
+{%- if person.bio %}
+<p class="small bio">{{ person.bio }}</p>
+{%- endif %}
+{%- if person.email or person.website %}
+<p class="label links">{% if person.email %}<a href="mailto:{{ person.email | strip }}">Email</a>{% endif %}{% if person.website %} <a href="{{ person.website }}">Website</a>{% endif %}</p>
+{%- endif %}
 </article>

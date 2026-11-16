@@ -12,18 +12,16 @@ A GitHub Pages/Jekyll static website template for the Cal Poly Data Design Lab a
 
 ## Add images
 
-Place headshots in `assets/img/people/` and update the `image` field in `_data/people.yml`. If an image is omitted, the people card automatically uses `assets/img/people/placeholder.svg`.
+Place headshots in `assets/img/people/` and update the `image` field in `_data/people.yml`. Photographs are converted to the site's dithered treatment in the browser. If an image is omitted, the person gets the D mark in the same treatment.
 
 ## Run locally
+
+You need Ruby (see `.ruby-version`) and Bundler. No Node.
 
 ```sh
 bundle install
 bundle exec jekyll serve
 ```
 
-Then open `http://127.0.0.1:4000`.
+Then open `http://127.0.0.1:4000`. `script/build` does what the deploy does: a production build into `_site/`, then `script/check-site.rb`, which fails if any local link, image, stylesheet, font, script, or JS import in the built site does not resolve.
 
-
-## Styling
-
-The site stylesheet is consolidated in `assets/css/style.css`. It keeps a Tufte CSS-inspired academic layout and typography, but uses system font stacks instead of missing vendored webfont files.

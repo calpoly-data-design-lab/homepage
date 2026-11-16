@@ -7,12 +7,13 @@ ongoing:
       - Sadie Fisher
       - Dr. Austin P. Wright
       - Dr. Ayaan Kazerouni
+    paper: "https://data.tech.ieeevis.org/storage/v1/object/sign/vis2026/pdf-files/w-eduvis/1013-doc.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2aXMyMDI2L3BkZi1maWxlcy93LWVkdXZpcy8xMDEzLWRvYy5wZGYiLCJpYXQiOjE3OTEyNzg1MDksImV4cCI6MTgyMjgxNDUwOX0.vbYsxR9bASK6j44X9rHKfNtff4Z64RFuBjEeaoPI6NI"
     summary: >-
       Exploring How Students Design Visualizations with Integrated Sketching, Natural Language, and Code Editing
 
 
 
-  - title: Interactive Synthetic Data Tool for User Evaluation of Exploratory Data Analysis Methods
+  - title: Evaluation of Exploratory Data Analysis Methods
     slug: dim-reduction-study-tool
     status: Ongoing
     years: 2026–present

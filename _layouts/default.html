@@ -1,78 +1,45 @@
 <!doctype html>
-<html lang="{{ site.lang | default: 'en' }}">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-            name="description"
-            content="{{ page.description | default: site.description | strip_html | normalize_whitespace }}"
-        />
-        <title>
-            {% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}
-        </title>
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="{{ '/assets/img/favicon.svg' | relative_url }}"
-        />
-
-        <meta name="color-scheme" content="light dark" />
-        <meta
-            name="theme-color"
-            content="#ffffff"
-            media="(prefers-color-scheme: light)"
-        />
-        <meta
-            name="theme-color"
-            content="#181818"
-            media="(prefers-color-scheme: dark)"
-        />
-        <link
-            rel="stylesheet"
-            href="{{ '/assets/css/style.css' | relative_url }}"
-        />
-        <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
-    </head>
-    <body>
-        <header class="site-header">
-            <a
-                class="site-title"
-                href="{{ '/' | relative_url }}"
-                aria-label="{{ site.data.site_settings.lab_name }} home"
-            >
-                <img
-                    class="site-logo"
-                    src="{{ '/assets/img/logo.svg' | relative_url }}"
-                    alt=""
-                    width="40"
-                    height="40"
-                />
-                <span>{{ site.data.site_settings.lab_name }}</span>
-            </a>
-            <nav class="site-nav" aria-label="Primary navigation">
-                {% for item in site.data.navigation %} {% if page.url ==
-                item.url %}
-                <a href="{{ item.url | relative_url }}" aria-current="page"
-                    >{{ item.title }}</a
-                >
-                {% else %}
-                <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                {% endif %} {% endfor %}
-            </nav>
-        </header>
-
-        <main class="page">{{ content }}</main>
-
-        <footer class="site-footer">
-            <p>
-                © <span data-current-year>{{ 'now' | date: '%Y' }}</span> {{
-                site.data.site_settings.lab_name }} · {{
-                site.data.site_settings.short_institution }} ·
-                <a href="mailto:{{ site.data.site_settings.email }}"
-                    >{{ site.data.site_settings.email }}</a
-                >
-            </p>
-            <p>{{ site.data.site_settings.footer_note }}</p>
-        </footer>
-    </body>
+<html lang="{{ site.lang | default: 'en' }}" {% include theme-attrs.html %}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace }}">
+  <title>{% if page.url == '/' %}{{ site.data.site_settings.lab_name }} · {{ site.data.site_settings.aux_name }}{% else %}{{ page.title }} · {{ site.data.site_settings.lab_name }} · {{ site.data.site_settings.aux_name }}{% endif %}</title>
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <script>document.documentElement.classList.add("js");</script>
+  <script type="module" src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</head>
+<body data-page="{% if page.url == '/' %}home{% else %}{{ page.url | remove: '/' }}{% endif %}">
+  <a class="skip label" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    {% include lockup.html height=44 %}
+    <button class="button nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Primary navigation">
+      {%- for item in site.data.navigation %}
+      <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {%- endfor %}
+    </nav>
+  </header>
+  {{ content }}
+  <footer class="site-footer wrap">
+    {% include lockup.html height=64 %}
+    <div class="footer-cols">
+      <p class="meta">© <span data-current-year>{{ 'now' | date: '%Y' }}</span> {{ site.data.site_settings.lab_name }} · <a href="mailto:{{ site.data.site_settings.email }}">{{ site.data.site_settings.email }}</a></p>
+      <p class="meta">{{ site.data.site_settings.footer_note }}</p>
+    </div>
+  </footer>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="mark">
+        <circle class="mark-circle" cx="75" cy="75" r="75"/>
+        <rect class="mark-bar" x="25" y="0" width="50" height="150"/>
+        <path class="mark-disc" d="M75 0 A75 75 0 0 1 75 150 Z"/>
+      </g>
+    </defs>
+  </svg>
+</body>
 </html>

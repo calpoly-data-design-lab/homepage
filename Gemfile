@@ -1,3 +1,5 @@
 source "https://rubygems.org"
 
-gem "github-pages", group: :jekyll_plugins
+# Plain Jekyll: the site is built by Cloudflare Pages, not GitHub Pages, so the
+# pinned github-pages bundle is not needed.
+gem "jekyll", "~> 4.4"
